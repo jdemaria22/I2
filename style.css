@@ -1,0 +1,93 @@
+#nav-image{
+  width: 100%;
+}
+.barra-navegacion {
+  color: white;
+  background-color: #1f2021;
+}
+.barra-items{
+  border: 1px solid white;
+}
+.barra-parrafo{
+  margin: 5px;
+}
+.titulo{
+  font-size: 22px;
+  margin-top: 20px;
+}
+.titulos_prod{
+  background-color: #500202;
+  color: white;
+}
+.titulos_evento{
+  color: white;
+  text-align: center;
+  background-color: #250101;
+}
+.titulos_mejores{
+  background-color: #500202;
+  color: white;
+}
+#iconos{
+  width: 30px;
+  height: 30px;
+  margin: 20px 15px 10px 20px;
+}
+.flexx{
+  display: flex;
+  text-align: center;
+  margin-left: 6%;
+  margin-top: 6%;
+}
+#subtitulo{
+  margin-left: 12%;
+}
+.img_side{
+  margin: 6%;
+}
+#img_side_tamaño{
+  width: 250px;
+  height: 120px;
+  margin-left: 18px;
+}
+.login-wrap{
+  width:260px;
+  height: 230px;
+  margin-left: 10%;
+  padding:15px;
+  background: #250101;
+  border-radius: 4px;
+  margin-bottom: 20%;
+}
+
+.form-group.last { 
+  margin-bottom:0px; 
+}
+.reset{
+
+}
+.botones{
+  align-content: right;
+}
+
+.text_field{
+  max-width: 100% ;
+}
+.control-label{
+  
+}
+.login{
+  display: block ;
+}
+.btn-login{
+  display: flex;
+}
+.btn-login-btn{
+  margin-left: 20%;
+}
+#fecha{
+  background-color: #650a08;
+}
+.event{
+  margin-left: 25%;
+}
