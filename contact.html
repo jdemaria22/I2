@@ -121,11 +121,11 @@
 			<div class="flexx mejores subtitulos_contact_1">
 				*Campos obligatorios
 			</div>
-			<div class="flexx mejores form_labels">
+			<div class="flexx mejores form_labels" id="0">
 				<p>
 					Destinatarios:
 				</p>
-				<select id="campos_form" name="destinatarios">
+				<select id="campos_form" name="destinatarios" onblur="cargarCheck(0)">
 
 					<option selected>Sr.</option>
 
@@ -135,45 +135,45 @@
 
 				</select>
 			</div>
-			<div class="flexx mejores form_labels">
+			<div class="flexx mejores form_labels" id="1">
 				<p>
 					Apellido y   <br>
 					Nombre :
 				</p>
-				<input id="campos_form_text" type="text" name="Nombre">
+				<input id="campos_form_text" type="text" name="Nombre" onblur="cargarCheck(1)">
 				<p>*</p>
 			</div>
-			<div class="flexx mejores form_labels">
+			<div class="flexx mejores form_labels" id="2">
 				<p>
 					Razon Social:
 				</p>
-				<input id="campos_form_text_razon" type="text" name="Razon">
+				<input id="campos_form_text_razon" type="text" style="text-transform:uppercase;" value="" onblur="cargarCheck(2)" onkeyup="javascript:this.value=this.value.toUpperCase();" name="Razon">
 			</div>
-			<div class="flexx mejores form_labels">
+			<div class="flexx mejores form_labels" id="3">
 				<p>
 					Email:
 				</p>
-				<input id="campos_form_text_email" type="text" name="Email">
+				<input id="campos_form_text_email" type="text" onblur="cargarCheck(3)" name="Email">
 				<p>*</p>
 			</div>
-			<div class="flexx mejores form_labels">
+			<div class="flexx mejores form_labels" id="4">
 				<p>
 					Telefono:
 				</p>
-				<input id="campos_form_text_telefono" type="tel" name="Telefono">
+				<input id="campos_form_text_telefono" type="tel" name="Telefono" onblur="cargarCheck(4)">
 				<p>*</p>
 			</div>
-			<div class="flexx mejores form_labels">
+			<div class="flexx mejores form_labels" id="5">
 				<p>
 					Celular:
 				</p>
-				<input id="campos_form_text_celular" type="tel" name="Celular">
+				<input id="campos_form_text_celular" type="tel" name="Celular" onblur="cargarCheck(5)">
 			</div>
-			<div class="flexx mejores form_labels">
+			<div class="flexx mejores form_labels" id="6">
 				<p>
 					Via Contacto:
 				</p>
-				<select id="campos_form_text_contacto" name="contacto">
+				<select id="campos_form_text_contacto" name="contacto" onblur="cargarCheck(6)">
 
 					<option selected>Email</option>
 
@@ -251,6 +251,36 @@
 			}
 		}
 
+		function cargarCheck(id) {
+			var elemento = document.getElementById(id.toString());
+			if (elemento.getElementsByTagName("span").length > 0) {
+					
+			}  else {
+				if (id == 1 || id == 3 || id == 4 ){
+					if (id == 1) {
+						if (validarNombre($('#campos_form_text').val())){
+							document.getElementById(id.toString()).innerHTML += "<span>&#10004;</span>";	
+						} 
+						else 
+						{document.getElementById(id.toString()).innerHTML += "<span>&#10008;</span>";}
+					}
+					
+					
+					if (id == 3 ) {
+						if ($('#campos_form_text_email').val().length > 0 && validarMail($('#campos_form_text_email').val())){
+							document.getElementById(id.toString()).innerHTML += "<span>&#10004;</span>";		
+						} else {document.getElementById(id.toString()).innerHTML += "<span>&#10008;</span>";}
+					}
+
+					if (id == 4 ){
+						if ($('#campos_form_text_telefono').val().length > 0 && validarTelefono($('#campos_form_text_telefono').val())){
+							document.getElementById(id.toString()).innerHTML += "<span>&#10004;</span>";
+						} else {document.getElementById(id.toString()).innerHTML += "<span>&#10008;</span>";}
+					}
+
+				} else {document.getElementById(id.toString()).innerHTML += "<span style='margin-left:1%;'>&#10004;</span>";}	
+			}
+		}
 
 	</script>
 	<!-- Optional JavaScript !!!!!BOOTSTRAT!!!!! -->
