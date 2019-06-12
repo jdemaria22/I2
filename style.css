@@ -22,7 +22,7 @@
 .titulos_evento{
   color: white;
   text-align: center;
-  background-color: #250101;
+  background-color: #500202;
 }
 .titulos_mejores{
   background-color: #500202;
@@ -87,7 +87,169 @@
 }
 #fecha{
   background-color: #650a08;
+  margin: 0% 5% 5% 5% ;
 }
 .event{
   margin-left: 25%;
+}
+.titulo_color{
+  background-color: #250101;
+  height: 40%;
+}
+.texto_parrafo{
+  font-size: 20px;
+}
+.titulo_color_abajo{
+  background-color: #250101;
+  height: 50%;
+  text-align: left;
+}
+#texto_parrafo{
+  margin-left: 10%;
+}
+.mejores{
+  margin: 2% 2% 0% 2% ;
+}
+.los_mejores{
+  font-size: 26px;
+}
+#parrafo_derecho_1{
+  font-size: 22px;
+  margin-left: 2%;
+  color: #9a9999;
+}
+#parrafo_derecho_2{
+  font-size: 18px;
+  margin-left: 2%;
+  color: black;
+}
+.parrafo_derecho_3{
+  background-color: #250101;
+  margin-left: 2%;
+  width: 75%;
+}
+#parrafo_derecho_3{
+  margin: 2%; 
+}
+.parrafo_derecho_4{
+  margin-left: 2%;
+}
+#parrafo_derecho_4{
+  color: black;
+  font-size: 20px;
+  width: 85%;
+}
+.parrafo_derecho_5{
+  margin-left: 10px;
+}
+.parrafo_derecho_izquierda{
+  background-color: black;
+  border: 1px solid white;
+  width: 100%;
+}
+.parrafo_derecho_derecha{
+  background-color: black;
+  width: 100%%;
+  border: 1px solid white;
+}
+#parrafo_derecho_izquierda{
+  margin: 5px 5px 5px 10px;
+}
+#parrafo_derecho_derecha{
+  margin: 5px 5px 5px 10px;
+}
+.parrafo_derecho_cuadro{
+  background-color: #877756;
+  width: 100%;
+  border: 1px solid white;
+  height: 80%;
+}
+#listas{
+  margin: 10% 0% 10% 0%;
+}
+#parrafo_ultimo{
+  margin: 5%;
+}
+.pie_page{
+  background-color: #2f0000;
+  color: white;
+}
+.pie{
+  margin-top: 1%;
+  margin-left: 1%; 
+  margin-bottom: 1%; 
+  border-right: 1px solid white;
+}
+.contact {
+  margin-right: : 2%;
+  margin-left: 2%; 
+  margin-bottom: 1%; 
+}
+.set_background{
+  background-color: #500202;
+}
+.set_tamaño {
+  height: 55%;
+}
+.subtitulos_contact{
+  margin-top: 0%;
+  font-size: 16px;
+  color: gray;
+  text-align: left;
+}
+.subtitulos_contact_1{
+  font-size: 19px;
+}
+#campos_form{
+  margin-left: 20%;
+  width: 64%;
+  height: 100%;
+}
+.form_labels{
+  margin-top: 1%;
+  text-align: left;
+}
+#campos_form_text{
+  margin-left: 23.5%;
+  width: 64%;
+  height: 15%;
+}
+#campos_form_text_razon{
+  margin-left: 20.5%;
+  width: 64%;
+  height: 15%;
+}
+#campos_form_text_email{
+  margin-left: 28.5%;
+  width: 64%;
+  height: 15%;
+}
+#campos_form_text_telefono{
+  margin-left: 25%;
+  width: 64%;
+  height: 15%;
+}
+#campos_form_text_celular{
+  margin-left: 27%;
+  width: 64%;
+  height: 15%;
+}
+#campos_form_text_contacto{
+  margin-left: 20.5%;
+  width: 64%;
+  height: 15%;
+}
+#campos_form_text_comentario{
+  margin-left: 20.5%;
+  width: 64%;
+  height: 200px;
+}
+.boton_enviar{
+  margin-bottom: 4%;
+  margin-left: 62%;
+  margin-top: 2%;
+}
+#boton_enviar{
+  color: white;
+  background-color: #500202;  
 }
