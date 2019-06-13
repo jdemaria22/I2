@@ -77,7 +77,7 @@
 				</div>			
 				<div class="texto_parrafo">
 					<p id="texto_parrafo">
-						Enólogo: <br>
+						Enologo: <br>
 						Experto responsable de <br>
 						dirigir y asesorar en el <br>
 						proceso de elavoracion <br>
@@ -95,7 +95,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-6 titulos_mejores">
+		<div class="col-8 titulos_mejores">
 			<div class="flexx mejores">
 				<p class="titulo los_mejores">Contactenos</p>
 			</div>	
@@ -121,7 +121,7 @@
 			<div class="flexx mejores subtitulos_contact_1">
 				*Campos obligatorios
 			</div>
-			<div class="flexx mejores form_labels" id="0">
+			<div class="flexx mejores form_labels">
 				<p>
 					Destinatarios:
 				</p>
@@ -134,42 +134,48 @@
 					<option>Ssr.</option>
 
 				</select>
+				<div id="0"></div>
 			</div>
-			<div class="flexx mejores form_labels" id="1">
+			<div class="flexx mejores form_labels">
 				<p>
 					Apellido y   <br>
 					Nombre :
 				</p>
 				<input id="campos_form_text" type="text" name="Nombre" onblur="cargarCheck(1)">
 				<p>*</p>
+				<div id="1"></div>
 			</div>
-			<div class="flexx mejores form_labels" id="2">
+			<div class="flexx mejores form_labels">
 				<p>
 					Razon Social:
 				</p>
 				<input id="campos_form_text_razon" type="text" style="text-transform:uppercase;" value="" onblur="cargarCheck(2)" onkeyup="javascript:this.value=this.value.toUpperCase();" name="Razon">
+				<div id="2"></div>
 			</div>
-			<div class="flexx mejores form_labels" id="3">
+			<div class="flexx mejores form_labels">
 				<p>
 					Email:
 				</p>
 				<input id="campos_form_text_email" type="text" onblur="cargarCheck(3)" name="Email">
 				<p>*</p>
+				<div id="3"></div>
 			</div>
-			<div class="flexx mejores form_labels" id="4">
+			<div class="flexx mejores form_labels">
 				<p>
 					Telefono:
 				</p>
 				<input id="campos_form_text_telefono" type="tel" name="Telefono" onblur="cargarCheck(4)">
 				<p>*</p>
+				<div id="4"></div>
 			</div>
-			<div class="flexx mejores form_labels" id="5">
+			<div class="flexx mejores form_labels">
 				<p>
 					Celular:
 				</p>
 				<input id="campos_form_text_celular" type="tel" name="Celular" onblur="cargarCheck(5)">
+				<div id="5"></div>
 			</div>
-			<div class="flexx mejores form_labels" id="6">
+			<div class="flexx mejores form_labels">
 				<p>
 					Via Contacto:
 				</p>
@@ -181,6 +187,7 @@
 
 					<option>Celular</option>
 				</select>
+				<div id="6"></div>
 			</div>
 			<div class="flexx mejores form_labels">
 				<p>
@@ -195,7 +202,17 @@
 		</div>
 	</div>
 	<script type="text/javascript">
+		var canAlert = false;
+		var alertBackup = window.alert
+
+		window.alert = function(msg){
+		    if(canAlert){
+		        alertBackup(msg)
+		    }
+		}
+
 		function validar() {
+			canAlert = true;
 			var email = $('#campos_form_text_email').val();
 			var nombre = $('#campos_form_text').val();
 			var telefono = $('#campos_form_text_telefono').val();
@@ -219,7 +236,7 @@
 		    	return false;
 		    }
 		    
-		};
+		}
 		function validarNombre(nombre){
 			 if (nombre.length > 0) {
 			 	return true;
@@ -252,34 +269,38 @@
 		}
 
 		function cargarCheck(id) {
+			canAlert = false;
 			var elemento = document.getElementById(id.toString());
 			if (elemento.getElementsByTagName("span").length > 0) {
-					
+				var element = document.getElementById('s'+id.toString());
+					element.parentNode.removeChild(element);
+				cargarCheck(id);
+
 			}  else {
-				if (id == 1 || id == 3 || id == 4 ){
+				agregarSpan(id);
+			}
+		}
+
+		function agregarSpan(id) {
+			if (id == 1 || id == 3 || id == 4 ){
 					if (id == 1) {
 						if (validarNombre($('#campos_form_text').val())){
-							document.getElementById(id.toString()).innerHTML += "<span>&#10004;</span>";	
-						} 
-						else 
-						{document.getElementById(id.toString()).innerHTML += "<span>&#10008;</span>";}
-					}
-					
-					
+							document.getElementById(id.toString()).innerHTML += "<span class='span_bueno' id='s"+id+"'>&#10004;</span>";	
+						} else {document.getElementById(id.toString()).innerHTML += "<span class='span_malo' id='s"+id+"' style='color: red;'>&#10008; Nombre incorrecto!.</span>";}
+					}			
+			
 					if (id == 3 ) {
 						if ($('#campos_form_text_email').val().length > 0 && validarMail($('#campos_form_text_email').val())){
-							document.getElementById(id.toString()).innerHTML += "<span>&#10004;</span>";		
-						} else {document.getElementById(id.toString()).innerHTML += "<span>&#10008;</span>";}
+							document.getElementById(id.toString()).innerHTML += "<span class='span_bueno' id='s"+id+"'>&#10004;</span>";		
+						} else {document.getElementById(id.toString()).innerHTML += "<span class='span_malo' id='s"+id+"' style='color: red;'>&#10008; Email incorrecto!.</span>";}
 					}
 
 					if (id == 4 ){
 						if ($('#campos_form_text_telefono').val().length > 0 && validarTelefono($('#campos_form_text_telefono').val())){
-							document.getElementById(id.toString()).innerHTML += "<span>&#10004;</span>";
-						} else {document.getElementById(id.toString()).innerHTML += "<span>&#10008;</span>";}
+							document.getElementById(id.toString()).innerHTML += "<span class='span_bueno' id='s"+id+"'>&#10004;</span>";
+						} else {document.getElementById(id.toString()).innerHTML += "<span class='span_malo' id='s"+id+"' style='color: red;'>&#10008; Telefono incorrecto!.</span>";}
 					}
-
-				} else {document.getElementById(id.toString()).innerHTML += "<span style='margin-left:1%;'>&#10004;</span>";}	
-			}
+				} else {document.getElementById(id.toString()).innerHTML += "<span class='span_bueno' id='s"+id+"' style='margin-left:1%;'>&#10004;</span>";}	
 		}
 
 	</script>

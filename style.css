@@ -201,7 +201,7 @@
   font-size: 19px;
 }
 #campos_form{
-  margin-left: 20%;
+  margin-left: 150px;
   width: 50%;
   height: 100%;
 }
@@ -210,43 +210,43 @@
   text-align: left;
 }
 #campos_form_text{
-  margin-left: 23.5%;
+  margin-left: 171px;
   width: 50%;
   height: 15%;
 }
 #campos_form_text_razon{
-  margin-left: 20.5%;
+  margin-left: 155px;
   width: 50%;
   height: 15%;
 }
 #campos_form_text_email{
-  margin-left: 28.5%;
+  margin-left: 206px; 
   width: 50%;
   height: 15%;
 }
 #campos_form_text_telefono{
-  margin-left: 25%;
+  margin-left: 184px;
   width: 50%;
   height: 15%;
 }
 #campos_form_text_celular{
-  margin-left: 27%;
+  margin-left: 196px;
   width: 50%;
   height: 15%;
 }
 #campos_form_text_contacto{
-  margin-left: 20.5%;
+  margin-left: 154px;
   width: 50%;
   height: 15%;
 }
 #campos_form_text_comentario{
-  margin-left: 20.5%;
+  margin-left: 15.5%;
   width: 50%;
   height: 200px;
 }
 .boton_enviar{
   margin-bottom: 4%;
-  margin-left: 62%;
+  margin-left: 55%;
   margin-top: 2%;
 }
 #boton_enviar{
